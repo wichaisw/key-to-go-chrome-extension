@@ -5,7 +5,20 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["keyListener.js"]
+      "js": ["./scripts/keyListener.js", "./scripts/background.js", "./scripts/constant.js"]
     }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Custom Shortcut"
+  },
+  "background": {
+    "scripts": ["./scripts/background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "notifications",
+    "http://*/",
+    "https://*/"
   ]
 }
