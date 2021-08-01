@@ -5,7 +5,8 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["./scripts/keyListener.js", "./scripts/background.js", "./scripts/constant.js"]
+      "run_at": "document_start",
+      "js": ["./scripts/background.js", "./scripts/keyListener.js"]
     }
   ],
   "browser_action": {
@@ -13,7 +14,8 @@
     "default_title": "Custom Shortcut"
   },
   "background": {
-    "scripts": ["./scripts/background.js"]
+    "scripts": ["./scripts/background.js"],
+    "persistent": false
   },
   "permissions": [
     "tabs",
